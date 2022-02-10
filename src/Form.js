@@ -7,8 +7,12 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const NewNameList = [...nameList, { id: new Date().getTime().toString(), name }]
-        setNameList(NewNameList)
+        if (name) {
+            const NewNameList = [...nameList, { id: new Date().getTime().toString(), name }]
+            setNameList(NewNameList)
+            setName('')
+        }
+
     }
 
     return (
