@@ -15,6 +15,8 @@ const APIList = () => {
         }
     }
 
+
+
     useEffect(() => {
         getList();
     }, [])
@@ -26,9 +28,8 @@ const APIList = () => {
                     const { id, name, email, body } = item;
                     return (
                         <li key={id}>
-                            <h5>{name}</h5>
+                            <h5>{id} - {name}</h5>
                             <h6>{email}</h6>
-                            <p>{body}</p>
                             <div className="title-underline"></div>
                         </li>
                     )

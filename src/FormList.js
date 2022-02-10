@@ -1,13 +1,15 @@
 import React from 'react'
 
-const FormList = ({ nameList }) => {
+const FormList = ({ nameList, removeItem }) => {
+
+
     return (
         <ul>
             {nameList.map(person => {
                 const { id, name } = person;
-                return <h3 key={id}>{name}</h3>
+                return <h3 key={id} onClick={() => removeItem(id)}> {name}</h3>
             })}
-        </ul>
+        </ul >
     )
 }
 

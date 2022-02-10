@@ -12,14 +12,23 @@ const Form = () => {
             setNameList(NewNameList)
             setName('')
         }
+    }
 
+    const removeItem = (id) => {
+        const newNameList = nameList.filter(item => {
+            if (id !== item.id) {
+                return item
+            }
+        })
+
+        setNameList(newNameList);
     }
 
     return (
         <form className="form" onSubmit={handleSubmit}>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
             <button>Submit</button>
-            <FormList nameList={nameList} />
+            <FormList nameList={nameList} removeItem={removeItem} />
         </form>
     )
 }
